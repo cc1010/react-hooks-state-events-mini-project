@@ -8,14 +8,21 @@ console.log("Here's the data you're working with");
 console.log({ CATEGORIES, TASKS });
 
 function App() {
-  return (
-    <div className="App">
-      <h2>My tasks</h2>
-      <CategoryFilter />
-      <NewTaskForm />
-      <TaskList />
-    </div>
-  );
+	const [useSelected, setSelected] = useState("All");
+
+	function handleFilter() {}
+
+	return (
+		<div className="App">
+			<h2>My tasks</h2>
+			<CategoryFilter
+				catagories={CATEGORIES}
+				handleFilter={handleFilter}
+			/>
+			<NewTaskForm />
+			<TaskList tasks={TASKS} />
+		</div>
+	);
 }
 
 export default App;
